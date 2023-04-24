@@ -53,14 +53,18 @@ photo.alt = information.name;
 const favoriteFoods = document.getElementById('favorite-foods');
 const favFoodsLength = information.favoriteFoods.length;
 for (let i = 0; i < favFoodsLength; i++) {
-    favoriteFoods.innerHTML += `<li>${information.favoriteFoods[i]}</li>`;
+    const listItem = document.createElement('li');
+    listItem.textContent = information.favoriteFoods[i];
+    favoriteFoods.appendChild(listItem);
 }
 // Step 6: Repeat Step 4 for each hobby in the hobbies property
 // Step 7: Repeat Step 5 using the HTML <ul> element with an ID of hobbies
 const hobbies = document.getElementById('hobbies');
 const hobbiesLength = information.hobbies.length;
 for (let i = 0; i < hobbiesLength; i++) {
-    hobbies.innerHTML += `<li>${information.hobbies[i]}</li>`;
+    const listItem = document.createElement('li');
+    listItem.textContent = information.hobbies[i];
+    hobbies.appendChild(listItem);
 }
 // Step 8: For each object in the <em>placesLived</em> property:
 // - Create an HTML <dt> element and put its place property in the <dt> element
