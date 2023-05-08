@@ -91,7 +91,7 @@ const range = (start, stop, step = 1) => {
 const numbers = range(1, 26);
 // Step 2: Assign the value of the array variable to the HTML element with an ID of "array"
 const arrayEl = document.getElementById('array');
-arrayEl.innerHTML = numbers;
+arrayEl.innerHTML = isNaN(numbers) === false ? 'NaN' : numbers;
 // Step 3: Use the filter array method to find all of the odd numbers of the array 
 // variable and assign the result to the HTML element with an ID of "odds" 
 // ( hint: % (modulus operator) )
