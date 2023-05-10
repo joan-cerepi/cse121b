@@ -33,7 +33,6 @@ const calculateGpa = grades => {
     const gpa = gradePoints.reduce(
         (accumulator, currentValue) => accumulator + currentValue
     ) / gradePoints.length;
-    console.log(gpa);
     return gpa.toFixed(2);
 };
 
