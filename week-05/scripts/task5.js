@@ -21,29 +21,29 @@ if (dayOfWeek >= 1 && dayOfWeek <= 5) {
 /* SWITCH, CASE, BREAK */
 
 // Step 1: Declare a new variable to hold another message
-let dayOfWeekString = '';
+let message2 = '';
 // Step 2: Use switch, case and break to set the message variable to the day of the week as a string (e.g. Sunday, Monday, etc.) using the day of week variable declared in Step 2 above
 switch(dayOfWeek) {
     case 0:
-        dayOfWeekString = 'Sunday';
+        message2 = 'Sunday';
         break;
     case 1:
-        dayOfWeekString = 'Monday';
+        message2 = 'Monday';
         break;
     case 2:
-        dayOfWeekString = 'Tuesday';
+        message2 = 'Tuesday';
         break;
     case 3:
-        dayOfWeekString = 'Wednesday';
+        message2 = 'Wednesday';
         break;
     case 4:
-        dayOfWeekString = 'Thursday';
+        message2 = 'Thursday';
         break;
     case 5:
-        dayOfWeekString = 'Friday';
+        message2 = 'Friday';
         break;
     case 6:
-        dayOfWeekString = 'Saturday';
+        message2 = 'Saturday';
         break;
 }
 /* OUTPUT */
@@ -51,7 +51,7 @@ switch(dayOfWeek) {
 // Step 1: Assign the value of the first message variable to the HTML element with an ID of message1
 document.getElementById('message1').textContent = message;
 // Step 2: Assign the value of the second message variable to the HTML element with an ID of message2
-document.getElementById('message2').textContent = dayOfWeekString;
+document.getElementById('message2').textContent = message2;
 /* FETCH */
 // Step 1: Declare a global empty array variable to store a list of temples
 let temples = [];
@@ -95,14 +95,37 @@ async function getTemples() {
 }
 getTemples();
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
-
+const reset = () => {
+    const templesContainer = document.getElementById('temples');
+    while (templesContainer.firstChild) {
+        templesContainer.removeChild(templesContainer.firstChild);
+    }
+};
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
-
+const sortBy = () => {
+    const dropdown = document.getElementById('sortBy');
+    const selectedOption = dropdown.value;
+    reset();
+    if (selectedOption === 'templeNameAscending') {
+        temples.sort((temple1, temple2) => {
+            if (temple1.templeName < temple2.templeName) return -1;
+            else if (temple1.templeName > temple2.templeName) return 1;
+            else return 0;
+        });
+    } else {
+        temples.sort((temple1, temple2) => {
+            if (temple1.templeName > temple2.templeName) return -1;
+            else if (temple1.templeName < temple2.templeName) return 1;
+            else return 0;
+        });
+    }
+    output(temples);
+};
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
-
+document.getElementById('sortBy').addEventListener('change', sortBy);
 /* STRETCH */
 
 // Consider adding a "Filter by" feature that allows users to filter the list of temples
