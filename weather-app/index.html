@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Weather</title>
+
+    <!-- Fontawesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS styling -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicons/favicon.ico">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="title">Current Weather (<span id="date"></span>)</h1>
+      </header>
+
+      <main>
+        <div class="weather-card">
+          <div class="search">
+            
+            <input type="text" id="searchbar" class="searchbar" placeholder="City Name...">
+            
+            <a href="#" class="search-btn" id="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i> Search
+            </a>
+          </div>
+          <article id="weather-data" class="weather-data">
+
+          </article>
+        </div>
+      </main>
+
+      <footer>
+        &copy;<span id="year"></span> | Joan Çerepi | All rights reserved.
+      </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
+</html>

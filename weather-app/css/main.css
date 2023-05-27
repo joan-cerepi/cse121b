@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,500;0,700;0,900;1,500&family=Merriweather+Sans:ital,wght@0,400;0,700;1,600&display=swap');
+
+* {box-sizing: border-box}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eaf7d5;
+}
+
+.wrapper {
+    width: 75%;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #d4f783;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.title {
+    font-family: Asap, sans-serif;
+    font-weight: 900;
+    margin: 0 0 25px 0;
+    padding: 25px 0;
+    background-color: orange;
+}
+
+.weather-card {
+    width: 480px;
+    margin: 0 auto;
+}
+
+.searchbar {
+    font-size: 20px;
+    width: 350px;
+}
+
+.search-btn {
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 4px 9px;
+    color: yellow;
+    background-color: rgb(131, 86, 2);
+    border-radius: 4px;
+    transition: .4s ease-in-out;
+}
+
+.search-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.search-btn:active {
+    position: relative;
+    top: 5px;
+}
+
+.weather-data {
+    width: 96%;
+    background-color: #ffffff;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.weather-data img {
+    width: 135px;
+}
+
+.no-margin {
+    margin: 0;
+    padding: 15px 0;
+}
+
+.temperature {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 20px 0;
+}
+
+.fahrenheit {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.celsius {
+    grid-column: 4 / -1;
+    grid-row: 1 / 2;
+}
+
+footer {
+    margin-top: 250px;
+}
